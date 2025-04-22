@@ -23,4 +23,5 @@ public class BookMstDto {
     private Timestamp deletedAt;
 
     private BookMst bookMst;
+    
 }
