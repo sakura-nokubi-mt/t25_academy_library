@@ -22,11 +22,13 @@ import jp.co.metateam.library.model.BookMstDto;
 import jp.co.metateam.library.service.BookMstService;
 import lombok.extern.log4j.Log4j2;
 
+
 /**
  * 書籍関連クラス
  */
 @Log4j2
 @Controller
+
 public class BookController {
     
     private final BookMstService bookMstService;
@@ -67,23 +69,22 @@ public class BookController {
         try {
             
             boolean errIsbnFlg = false;
-            boolean errTitleFlg = false;
+            boolean errTitleFlg = false; 
             String title = bookMstDto.getTitle();
             String isbn = bookMstDto.getIsbn();
-            int isbnExist = this.bookMstService.selectByIsbn(isbn);
 
             //書籍必須
-            if (title == null || title.isEmpty()){
+            if (StringUtils.isEmpty(title)){
                 result.rejectValue("title", "error.value", "書籍名は必須です");
                 errTitleFlg = true;
             }
             //書籍桁数
-            if (title.length() >= 2){
+            if (title.length() >= 256){
                 result.rejectValue("title", "error.value", "書籍名は255文字以下で入力してください");
                 errTitleFlg = true;
             }
             //ISBN必須
-            if (isbn == null || isbn.isEmpty()){
+            if (StringUtils.isEmpty(title)){
                 result.rejectValue("isbn", "error.value", "ISBNは必須です");
                 errIsbnFlg = true;
             }
@@ -98,6 +99,7 @@ public class BookController {
                 errIsbnFlg = true;
             }
            //重複チェック
+           int isbnExist = this.bookMstService.selectByIsbn(isbn);//データ取得
             if(isbnExist >= 1){
                 result.rejectValue("isbn", "error.value", "登録済みのISBNです");
                 errIsbnFlg = true;
@@ -116,7 +118,7 @@ public class BookController {
         ra.addFlashAttribute("bookMstDto", bookMstDto);
         ra.addFlashAttribute("org.springframework.validation.BindingResult.bookMstDto", result);
 
-            return "redirect:/book/add";
+            return "book/add"; //redirectいらない？
         }
     }
 }
