@@ -1,9 +1,37 @@
+.link_index {
+  text-align: right;
+  margin-bottom: 5px; 
+  font-size: 15px;
+}
+
+.must{
+  color: red;
+  font-size: 15px;
+  margin-top: -20px;
+  margin-bottom: 20px;
+}
+
 #book_register_form {
-  font-size: 20px;
+  font-size: 18px;
+}
+
+.titletext{
+  font-size: 15px;
+  padding: 5px 5px;
+  width: 800px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.isbntext{
+  font-size: 15px;
+  padding: 5px 5px;
+  width: 800px;
+  margin-top: 10px;
+  margin-bottom: 60px;
 }
 
 #book_register_form p .asterisk {
-  font-size: 14px;
+  font-size: 15px;
   margin-left: 5px;
   margin-top: -5px;
 }
@@ -24,10 +52,15 @@
   margin-top: 50px;
 }
 
-#submit_btn {
-  width: 80px;
-  height: 45px;
-  font-size: 20px;
+  .submit_btn {
+    text-align: center;
+    width: 800px; /* 必要なら明示的に幅指定 */
+  }
+
+.submit{
+  width: 60px;
+  height: 35px;
+  font-size: 15px;
   background-color: #9CF2D3;
   color: #545454;
   border-radius: 0.5rem;

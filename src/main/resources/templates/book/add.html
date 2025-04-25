@@ -16,29 +16,29 @@
                 <div class="page_title">書籍登録</div>
                 <div class="page_contents">
                     <form id="book_register_form" th:object="${bookMstDto}" th:action="@{/book/add}" method="post">
-                        <div class="mb30 flexarea">
+                        <div class="link_index">
                             <span>
                                 <a th:href="@{/book/index}" class="link">← 一覧へ戻る</a>
                             </span>
                         </div>
                         
-                            <div class="must"><span style="color:red">＊は必須項目です</span></div>
+                            <div class="must">＊は必須項目です</div>
                         <tr>
-                            <th scope="col">書籍名:</th>
+                            <th scope="col" class="title">書籍名:</th>
                             <td>
-                                <input type="text" name="title" placeholder="書籍名を入力" th:field="*{title}" />
+                                <div><input type="text" class="titletext" name="title" placeholder="書籍名を入力" th:field="*{title}" /></div>
                                 <div class="error_msg" th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></div>
                             </td>
                         </tr>
                         <tr>
-                            <th scope="col">ISBN:</th>
+                            <th scope="col" class="isbn">ISBN:</th>
                             <td>
-                                <input type="text" name="isbn" placeholder="ISBNを入力" th:field="*{isbn}" />
+                                <div><input type="text" class="isbntext" name="isbn" placeholder="ISBNを入力" th:field="*{isbn}" /></div>
                                 <div class="error_msg" th:if="${#fields.hasErrors('isbn')}" th:errors="*{isbn}"></div>
                             </td>
                         </tr>
-                        <div class="btn_block">
-                            <input type="submit" value="保存">
+                        <div class="submit_btn">
+                            <span><input type="submit" class="submit" value="保存"></span>
                         </div>
                     </form>
                 </div>
