@@ -1,5 +1,20 @@
+.btn_block{
+  text-align: right;
+  margin-bottom: 40px; 
+}
+
+.green_button {
+  background-color: #9ce1ac; 
+  color: rgb(35, 23, 23); 
+  border-radius: 5px;
+  font-size: 16px;
+  border: none;
+  padding: 5px 12px;
+ }
+
 .books_table {
- width: 100%;
+  width: 500px;             
+  margin: 0 auto;
  text-align: left;
  border-collapse: collapse;
  border-spacing: 0;
@@ -12,7 +27,7 @@
   padding: 13px;
   border: solid 1px #B9B9B9;
   color: #545454;
-  font-size: 18px;
+  font-size: 10px;
 }
 
 .books_table td{
@@ -20,12 +35,12 @@
   vertical-align: top;
   background: #FFFFFF;
   border: solid 1px #B9B9B9;
-  padding: 13px;
-  font-size: 20px;
+  padding: 10px;
+  font-size: 10px;
 }
 
 .books_table td:nth-child(1){
-  width: 40%;
+  width: 65%;
 }
 
 .books_table td:nth-child(1) .book_title_contents{
